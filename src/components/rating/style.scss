@@ -1,0 +1,23 @@
+.rating {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding-top: 40px;
+  border-top: 1px solid;
+  & > div {
+    display: flex;
+  }
+  &_header {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 1rem;
+  }
+  &_body {
+    & > i {
+      font-size: 1.5rem;
+      color: #2f80ed;
+    }
+  }
+}

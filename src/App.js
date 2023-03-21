@@ -1,24 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { createContext, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import { privateRouter, publicRoute } from "./components/routers/route";
+export const UserStore = createContext();
 function App() {
+  const [role, setRole] = useState("role_Admin");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <UserStore.Provider value={role}>
+        <div className="App">
+          <Routes>
+            {publicRoute?.map((item, index) => {
+              const Page = item?.element;
+              return item?.layout ? (
+                <Route
+                  path={item?.path}
+                  key={index + "route"}
+                  element={
+                    <item.layout>
+                      <Page />
+                    </item.layout>
+                  }
+                />
+              ) : (
+                <Route
+                  path={item?.path}
+                  key={index + "route"}
+                  element={<Page />}
+                />
+              );
+            })}
+            {role === "role_Admin" &&
+              privateRouter?.map((item, index) => {
+                const Page = item?.element;
+                return item?.layout ? (
+                  <Route
+                    path={item?.path}
+                    key={index + "route"}
+                    element={
+                      <item.layout>
+                        <Page />
+                      </item.layout>
+                    }
+                  />
+                ) : (
+                  <Route
+                    path={item?.path}
+                    key={index + "route"}
+                    element={<Page />}
+                  />
+                );
+              })}
+          </Routes>
+        </div>
+      </UserStore.Provider>
+    </BrowserRouter>
   );
 }
 
