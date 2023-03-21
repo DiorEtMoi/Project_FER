@@ -1,7 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.scss";
-function MovieCard() {
+function MovieCard({ item }) {
+  console.log(item);
   const navigate = useNavigate();
   return (
     <div
@@ -13,7 +14,7 @@ function MovieCard() {
     >
       <div className="movie_card">
         <div className="movie_card_header" onClick={() => navigate("/movie/1")}>
-          <img src="https://viettoons.tv/media/movie/images/2023_02_12/56092b9cdbbc4217b93c.jpg" />
+          <img src={item?.image} />
           <div className="movie_card_play">
             <div className="movie_card_play_icon">
               <i class="fa-solid fa-play"></i>
@@ -26,7 +27,7 @@ function MovieCard() {
         <div className="movie_card_content">
           <div
             className="movie_card_content_title"
-            onClick={() => navigate("/movie/1")}
+            onClick={() => navigate(`/movie/${item?.id}`)}
           >
             Kick Buttowski
           </div>

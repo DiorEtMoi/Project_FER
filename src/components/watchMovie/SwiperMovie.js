@@ -4,7 +4,7 @@ import "swiper/scss";
 import SwiperMovieCard from "./SwiperMovieCard";
 import "swiper/scss/navigation";
 import "./style.scss";
-export default () => {
+export default ({ movie }) => {
   return (
     <Swiper
       modules={[Navigation, Pagination]}
@@ -13,24 +13,13 @@ export default () => {
       pagination={{ clickable: true }}
       className="swiper_movie"
     >
-      <SwiperSlide>
-        <SwiperMovieCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperMovieCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperMovieCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperMovieCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperMovieCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperMovieCard />
-      </SwiperSlide>
+      {movie?.map((item, index) => {
+        return (
+          <SwiperSlide key={index + "swiperMovie"}>
+            <SwiperMovieCard item={item} />
+          </SwiperSlide>
+        );
+      })}
     </Swiper>
   );
 };

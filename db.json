@@ -1,0 +1,27 @@
+{
+  "movie": [
+    {
+      "id": 1,
+      "name": "Attack on Titan: Final Season - S4",
+      "content": "Phần thứ 3 của Final Season. Mỗi tập của phần này đều có độ tài 1 tiếng.",
+      "chap": [{ "chapID": 1 }],
+      "type": { "typeID": 1 },
+      "image": "https://res.cloudinary.com/db7xtr0t6/image/upload/v1678011941/vtmy07vgygtsfta8e1k6.jpg",
+      "background": "https://res.cloudinary.com/db7xtr0t6/image/upload/v1679416931/attack-on-titan-final-chapter-e1670261000922_iea4fa.jpg"
+    }
+  ],
+  "type": [
+    {
+      "id": 1,
+      "typeName": "Action"
+    }
+  ],
+  "chapAnime": [
+    {
+      "id": 1,
+      "animeID": 1,
+      "video": "https://short.ink/N68LV7Yyl",
+      "image": "https://res.cloudinary.com/db7xtr0t6/image/upload/v1678011941/vtmy07vgygtsfta8e1k6.jpg"
+    }
+  ]
+}

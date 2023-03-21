@@ -1,13 +1,14 @@
-import { createContext, useState } from "react";
+import { createContext, useRef, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { privateRouter, publicRoute } from "./components/routers/route";
 export const UserStore = createContext();
 function App() {
   const [role, setRole] = useState("role_Admin");
+  const cache = useRef({});
   return (
     <BrowserRouter>
-      <UserStore.Provider value={role}>
+      <UserStore.Provider value={{ role, setRole, cache }}>
         <div className="App">
           <Routes>
             {publicRoute?.map((item, index) => {
