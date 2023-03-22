@@ -53,7 +53,7 @@ function Login() {
     if (account) {
       toast.success("Đăng nhập thành công !");
       setRole(account);
-      return navigate("/admin/movie_manager");
+      return navigate("/");
     }
     return toast.error("Tài khoản hoặc mật khẩu không đúng ?");
   };
