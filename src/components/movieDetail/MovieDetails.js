@@ -26,6 +26,7 @@ function MovieDetails() {
     let here = true;
     const url = `http://localhost:3000/movie/${slug}`;
     if (cache.current[url]) {
+      setBg(cache.current[url]?.background);
       return setAnime(cache.current[url]);
     }
     dispatch(isLoading());
@@ -52,7 +53,9 @@ function MovieDetails() {
     <div className="movie_detail">
       <div
         className="movie_detail_background"
-        style={{ background: `url(${bg}) center top / cover no-repeat` }}
+        style={{
+          background: `url(${anime?.image}) center top / cover no-repeat`,
+        }}
       ></div>
       <div className="container movie_detail_content">
         <div

@@ -6,6 +6,7 @@ import Home from "../home/Home";
 import MovieDetails from "../movieDetail/MovieDetails";
 import WatchMovie from "../watchMovie/WatchMovie";
 import MovieManager from "../../admin/addMovie/MovieManager";
+import AddMovie from "../../admin/addMovie/AddMovie";
 
 export const publicRoute = [
   {
@@ -38,6 +39,11 @@ export const privateRouter = [
   {
     path: "/admin/movie_manager",
     element: MovieManager,
+    layout: Layout,
+  },
+  {
+    path: "/admin/add_movie",
+    element: AddMovie,
     layout: Layout,
   },
 ];

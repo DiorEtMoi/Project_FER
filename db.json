@@ -1,13 +1,49 @@
 {
+  "user": [
+    {
+      "id": 1,
+      "userName": "dinhhoan",
+      "password": "123",
+      "role": "role_admin"
+    },
+    {
+      "id": 2,
+      "userName": "dinhhoan1",
+      "password": "123",
+      "role": "role_user"
+    },
+    {
+      "userName": "vuong",
+      "password": "123",
+      "role": "role_user",
+      "id": 3
+    }
+  ],
   "movie": [
     {
       "id": 1,
       "name": "Attack on Titan: Final Season - S4",
       "content": "Phần thứ 3 của Final Season. Mỗi tập của phần này đều có độ tài 1 tiếng.",
-      "chap": [{ "chapID": 1 }],
-      "type": { "typeID": 1 },
+      "chap": [
+        {
+          "chapID": 1
+        }
+      ],
+      "type": {
+        "typeID": 1
+      },
       "image": "https://res.cloudinary.com/db7xtr0t6/image/upload/v1678011941/vtmy07vgygtsfta8e1k6.jpg",
       "background": "https://res.cloudinary.com/db7xtr0t6/image/upload/v1679416931/attack-on-titan-final-chapter-e1670261000922_iea4fa.jpg"
+    },
+    {
+      "name": "Dinh Hoan",
+      "content": "123123",
+      "totalChap": "1",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679467158/urw2mgfmqjnmhbai16c7.jpg",
+      "type": {
+        "typeID": 1
+      },
+      "id": 2
     }
   ],
   "type": [

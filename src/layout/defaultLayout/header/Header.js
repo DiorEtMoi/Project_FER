@@ -1,9 +1,23 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { UserStore } from "../../../App";
 import "./style.scss";
 function Header() {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
+  const { role, setRole } = useContext(UserStore);
+  const [list, setList] = useState([]);
+  const handleSearch = async (e) => {
+    setSearch(e.target.value);
+    const listAnime = await axios.get(
+      `http://localhost:3000/movie?name_like=${e.target.value}`
+    );
+    const data = listAnime?.data;
+    console.log(data);
+    setList([...data]);
+  };
   return (
     <header className="header">
       <div className="container header">
@@ -23,41 +37,46 @@ function Header() {
             <input
               placeholder="Nhập phim muốn tìm ...."
               value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={(e) => handleSearch(e)}
             />
             <i class="fa-solid fa-magnifying-glass"></i>
           </div>
-          <div
-            className="header_option_login"
-            onClick={() => navigate("/auth/login")}
-          >
-            Đăng Nhập <i class="fa-solid fa-right-to-bracket"></i>
-          </div>
+          {role ? (
+            <div
+              className="header_option_login"
+              onClick={() => {
+                toast.success("Đăng xuất thành công !");
+                navigate("/");
+                return setRole(null);
+              }}
+            >
+              <h3>{role?.userName}</h3>
+              Đăng xuất
+            </div>
+          ) : (
+            <div
+              className="header_option_login"
+              onClick={() => navigate("/auth/login")}
+            >
+              Đăng Nhập <i class="fa-solid fa-right-to-bracket"></i>
+            </div>
+          )}
         </div>
       </div>
       {search && (
         <div className="search_content">
           <div className="search_content_wrap">
-            <div className="search_content_wrap_item">
-              <img src="https://viettoons.tv/media/movie/images/2023_02_12/56092b9cdbbc4217b93c.jpg" />
-              <p>Kick Buttowski</p>
-            </div>
-            <div className="search_content_wrap_item">
-              <img src="https://viettoons.tv/media/movie/images/2023_02_12/56092b9cdbbc4217b93c.jpg" />
-              <p>Kick Buttowski</p>
-            </div>
-            <div className="search_content_wrap_item">
-              <img src="https://viettoons.tv/media/movie/images/2023_02_12/56092b9cdbbc4217b93c.jpg" />
-              <p>Kick Buttowski</p>
-            </div>
-            <div className="search_content_wrap_item">
-              <img src="https://viettoons.tv/media/movie/images/2023_02_12/56092b9cdbbc4217b93c.jpg" />
-              <p>Kick Buttowski</p>
-            </div>{" "}
-            <div className="search_content_wrap_item">
-              <img src="https://viettoons.tv/media/movie/images/2023_02_12/56092b9cdbbc4217b93c.jpg" />
-              <p>Kick Buttowski</p>
-            </div>
+            {list?.map((item, index) => {
+              return (
+                <div
+                  className="search_content_wrap_item"
+                  key={index + "searchCard"}
+                >
+                  <img src={item?.image} />
+                  <p>{item?.name}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       )}
