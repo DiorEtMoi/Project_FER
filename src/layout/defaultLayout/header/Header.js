@@ -70,7 +70,6 @@ function Header() {
           >
             Thể loại ?
           </div>
-          <div className="header_nav_item">Bộ sưu tập</div>
         </div>
         <div className="header_option">
           <div className="header_option_search">

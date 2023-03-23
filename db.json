@@ -25,6 +25,7 @@
       "id": 3
     },
     {
+
       "star": 10,
       "content": "hay",
       "animeID": 4,
@@ -47,25 +48,29 @@
       "accountID": 3,
       "name": "vuong",
       "id": 6
+
     }
   ],
   "user": [
     {
-      "id": 1,
+      "role": "role_admin",
       "userName": "dinhhoan",
       "password": "123",
-      "role": "role_admin"
+      "status": 0,
+      "id": 1
     },
     {
-      "id": 2,
+      "role": "role_user",
       "userName": "dinhhoan1",
       "password": "123",
-      "role": "role_user"
+      "status": 1,
+      "id": 2
     },
     {
+      "role": "role_user",
       "userName": "vuong",
       "password": "123",
-      "role": "role_user",
+      "status": 1,
       "id": 3
     }
   ],
