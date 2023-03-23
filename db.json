@@ -23,6 +23,14 @@
       "accountID": 1,
       "name": "dinhhoan",
       "id": 3
+    },
+    {
+      "star": 8,
+      "content": "ok",
+      "animeID": 1,
+      "accountID": 3,
+      "name": "vuong",
+      "id": 4
     }
   ],
   "user": [
