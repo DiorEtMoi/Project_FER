@@ -1,4 +1,30 @@
 {
+  "rating": [
+    {
+      "star": 9,
+      "content": "asdas",
+      "animeID": 1,
+      "accountID": 1,
+      "name": "dinhhoan",
+      "id": 1
+    },
+    {
+      "star": 10,
+      "content": "Hay",
+      "animeID": 2,
+      "accountID": 1,
+      "name": "dinhhoan",
+      "id": 2
+    },
+    {
+      "star": 10,
+      "content": "Hay",
+      "animeID": 3,
+      "accountID": 1,
+      "name": "dinhhoan",
+      "id": 3
+    }
+  ],
   "user": [
     {
       "id": 1,

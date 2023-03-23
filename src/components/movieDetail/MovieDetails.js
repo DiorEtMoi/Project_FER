@@ -7,6 +7,8 @@ import { isFailing, isLoading, isSuccess } from "../../redux/auth/slice";
 import Rating from "../rating/Rating";
 import "./style.scss";
 function MovieDetails() {
+  const [update, setUpdate] = useState(false);
+  const [rate, setRate] = useState([]);
   const navigate = useNavigate();
   const [anime, setAnime] = useState([]);
   const { cache } = useContext(UserStore);
@@ -22,6 +24,26 @@ function MovieDetails() {
       behavior: "smooth",
     });
   }, []);
+  useEffect(() => {
+    let here = true;
+    const url = `http://localhost:3000/rating?animeID=${slug}`;
+    dispatch(isLoading());
+    axios
+      .get(url)
+      .then((res) => {
+        if (!here) {
+          return;
+        }
+        setRate(res?.data);
+        dispatch(isSuccess());
+      })
+      .catch((err) => {
+        dispatch(isFailing());
+      });
+    return () => {
+      here = false;
+    };
+  }, [update]);
   useEffect(() => {
     let here = true;
     const url = `http://localhost:3000/movie/${slug}`;
@@ -144,7 +166,22 @@ function MovieDetails() {
             </div>
           </div>
         </div>
-        <Rating />
+        <Rating animeID={slug} update={update} setUpdate={setUpdate} />
+        <div className="list_rate">
+          {rate?.map((item, index) => {
+            return (
+              <div className="list_rate_item" key={index + "rate"}>
+                <div className="list_rate_item_header">
+                  <h3>{item?.name}</h3>
+                  <span>
+                    <i className="fa-regular fa-star"></i> {item?.star}
+                  </span>
+                </div>
+                <div className="list_rate_item_content">{item?.content}</div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

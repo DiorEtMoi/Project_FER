@@ -77,7 +77,7 @@ function WatchMovie() {
           height="100%"
           src={anime?.video}
           frameborder="0"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
       <div className="watch_movie_chap">
