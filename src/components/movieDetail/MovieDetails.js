@@ -14,6 +14,7 @@ function MovieDetails() {
   const { cache } = useContext(UserStore);
   const dispatch = useDispatch();
   const { slug } = useParams();
+  const [start, setStart] = useState(0);
   const [bg, setBg] = useState(
     "https://viettoons.tv/media/movie/images/2023_02_12/3cf33aa8f4a74818a6a8.jpg"
   );
@@ -24,6 +25,13 @@ function MovieDetails() {
       behavior: "smooth",
     });
   }, []);
+  useEffect(() => {
+    let total = 0;
+    rate?.forEach((item) => {
+      total += item?.star;
+    });
+    setStart(total / rate.length);
+  }, [rate]);
   useEffect(() => {
     let here = true;
     const url = `http://localhost:3000/rating?animeID=${slug}`;
@@ -102,7 +110,7 @@ function MovieDetails() {
         <div className="movie_detail_content_details">
           <div className="movie_detail_content_details_item">
             <i className="fa-regular fa-star"></i>
-            <span>10</span>
+            <span>{start}</span>
           </div>
           <div className="movie_detail_content_details_item">
             <span>Action</span>
