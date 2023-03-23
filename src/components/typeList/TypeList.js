@@ -9,6 +9,7 @@ import MovieList from "../movieList/MovieList";
 function TypeList() {
   const [anime, setAnime] = useState([]);
   const { cache } = useContext(UserStore);
+  const [type, setType] = useState([]);
   const { slug } = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -19,7 +20,7 @@ function TypeList() {
   }, [slug]);
   useEffect(() => {
     let here = true;
-    const url = `http://localhost:3000/movie?type.typeID=${slug}`;
+    const url = `http://localhost:3000/movie?type.id=${slug}`;
     if (cache.current[url]) {
       return setAnime(cache.current[url]);
     }
@@ -41,10 +42,35 @@ function TypeList() {
     return () => {
       here = false;
     };
+  }, [slug]);
+  useEffect(() => {
+    let here = true;
+    const url = "http://localhost:3000/type";
+    if (cache.current[url]) {
+      return setType(cache.current[url]);
+    }
+    dispatch(isLoading());
+    axios
+      .get(url)
+      .then((res) => {
+        if (!here) {
+          return;
+        }
+        setType(res?.data);
+        cache.current[url] = res?.data;
+        console.log(res?.data);
+        dispatch(isSuccess());
+      })
+      .catch((err) => {
+        dispatch(isFailing());
+      });
+    return () => {
+      here = false;
+    };
   }, []);
   return (
     <div>
-      <MovieList anime={anime} />
+      <MovieList anime={anime} type={type} />
     </div>
   );
 }

@@ -51,7 +51,7 @@ function UploadChap() {
         name: anime?.name,
         content: anime?.content,
         image: anime?.image,
-        type: { typeID: anime?.type?.type },
+        type: anime?.type,
         chap: [
           ...anime?.chap,
           {

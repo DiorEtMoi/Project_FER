@@ -12,6 +12,7 @@ import TypeList from "../typeList/TypeList";
 import PrivateLayout from "../../layout/privateLayout/PrivateLayout";
 import TypeMovie from "../../admin/typeMovie/TypeMovie";
 import ManageUser from "../../admin/addMovie/ManageUser"
+import AddNewType from "../../admin/typeMovie/AddNewType";
 
 export const publicRoute = [
   {
@@ -69,6 +70,11 @@ export const privateRouter = [
   {
     path: "/admin/type",
     element: TypeMovie,
+    layout: PrivateLayout,
+  },
+  {
+    path: "/admin/type/add",
+    element: AddNewType,
     layout: PrivateLayout,
   },
 ];

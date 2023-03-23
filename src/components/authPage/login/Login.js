@@ -57,6 +57,15 @@ function Login() {
     }
     return toast.error("Tài khoản hoặc mật khẩu không đúng ?");
   };
+  useEffect(() => {
+    const btn = document.getElementById("login_btn");
+    const input = document.getElementById("password_input");
+    input.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        btn.click();
+      }
+    });
+  }, []);
   return (
     <div className="login">
       <div className="login_wrap">
@@ -67,6 +76,7 @@ function Login() {
             placeholder="Enter Password"
             type={show ? "text" : "password"}
             ref={passRef}
+            id="password_input"
           />
         </div>
         <div
@@ -96,6 +106,7 @@ function Login() {
             backgroundColor: "#007bff",
             color: "#fff",
           }}
+          id="login_btn"
           onClick={handleLogin}
         >
           Login

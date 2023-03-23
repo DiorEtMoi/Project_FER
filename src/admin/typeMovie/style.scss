@@ -1,0 +1,27 @@
+.admin_type_content {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  &_item {
+    width: 25%;
+    & > h3 {
+      color: #fff;
+    }
+  }
+}
+.add_new_type_content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  & > label {
+    width: 20%;
+    font-size: 20px;
+    color: #fff;
+  }
+  & > input {
+    flex: 1;
+    outline: none;
+    border-radius: 16px;
+    padding: 10px;
+  }
+}

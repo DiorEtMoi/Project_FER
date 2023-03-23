@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import SwiperCard from "../card/SwiperCard";
-export default ({ anime }) => {
+export default ({ anime, type }) => {
   return (
     <Swiper
       modules={[Autoplay]}
@@ -23,7 +23,7 @@ export default ({ anime }) => {
       {anime?.map((item, index) => {
         return (
           <SwiperSlide key={index + "swiperHome"}>
-            <SwiperCard item={item} />
+            <SwiperCard item={item} type={type} />
           </SwiperSlide>
         );
       })}

@@ -33,10 +33,10 @@ function WatchMovie() {
         setAnime(res?.data);
         console.log(res?.data);
         cache.current[url] = res?.data;
-        dispatch(isSuccess());
+        return dispatch(isSuccess());
       })
       .catch((err) => {
-        dispatch(isFailing());
+        return dispatch(isFailing());
       });
     return () => {
       here = false;
@@ -45,7 +45,7 @@ function WatchMovie() {
   useEffect(() => {
     if (anime) {
       let here = true;
-      const url = `http://localhost:3000/chapAnime?animeID=${anime?.animeID}`;
+      const url = `http://localhost:3000/chapAnime?animeID=${anime?.animeID}&_sort=id&_order=desc`;
       if (cache.current[url]) {
         return setMovie(cache.current[url]);
       }
@@ -59,10 +59,10 @@ function WatchMovie() {
           setMovie(res?.data);
           console.log(res?.data);
           cache.current[url] = res?.data;
-          dispatch(isSuccess());
+          return dispatch(isSuccess());
         })
         .catch((err) => {
-          dispatch(isFailing());
+          return dispatch(isFailing());
         });
       return () => {
         here = false;
@@ -77,7 +77,7 @@ function WatchMovie() {
           height="100%"
           src={anime?.video}
           frameborder="0"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
       <div className="watch_movie_chap">

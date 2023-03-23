@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.scss";
-function MovieCard({ item }) {
+function MovieCard({ item, type }) {
   const navigate = useNavigate();
+  const [current, setCurrent] = useState(null);
+  useEffect(() => {
+    const check = type?.find((ite) => ite?.id === item?.type?.id);
+    setCurrent(check);
+  }, [type]);
   return (
     <div
       style={{
@@ -39,7 +44,7 @@ function MovieCard({ item }) {
                 marginRight: "20px",
               }}
             >
-              Action
+              {current?.typeName}
             </span>
             <span>2023</span>
           </div>
