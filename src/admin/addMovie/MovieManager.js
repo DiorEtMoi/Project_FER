@@ -9,6 +9,7 @@ function MovieManager() {
   const [anime, setAnime] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [update, setUpdate] = useState(false);
   useEffect(() => {
     let here = true;
     const url = "http://localhost:3000/movie";
@@ -30,7 +31,7 @@ function MovieManager() {
     return () => {
       here = false;
     };
-  }, []);
+  }, [update]);
   return (
     <div className="movie_manager">
       <div className="movie_manager_header">
@@ -53,7 +54,14 @@ function MovieManager() {
       </div>
       <div className="movie_manager_body">
         {anime?.map((item, index) => {
-          return <CardMovie item={item} key={index + "cardManager"} />;
+          return (
+            <CardMovie
+              item={item}
+              key={index + "cardManager"}
+              update={update}
+              setUpdate={setUpdate}
+            />
+          );
         })}
       </div>
     </div>

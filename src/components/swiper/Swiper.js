@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import SwiperCard from "../card/SwiperCard";
-export default () => {
+export default ({ anime }) => {
   return (
     <Swiper
       modules={[Autoplay]}
@@ -20,27 +20,13 @@ export default () => {
         disableOnInteraction: false,
       }}
     >
-      <SwiperSlide>
-        <SwiperCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperCard />
-      </SwiperSlide>{" "}
-      <SwiperSlide>
-        <SwiperCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SwiperCard />
-      </SwiperSlide>
+      {anime?.map((item, index) => {
+        return (
+          <SwiperSlide key={index + "swiperHome"}>
+            <SwiperCard item={item} />
+          </SwiperSlide>
+        );
+      })}
     </Swiper>
   );
 };

@@ -13,7 +13,10 @@ function MovieCard({ item }) {
       }}
     >
       <div className="movie_card">
-        <div className="movie_card_header" onClick={() => navigate("/movie/1")}>
+        <div
+          className="movie_card_header"
+          onClick={() => navigate(`/movie/${item?.id}`)}
+        >
           <img src={item?.image} />
           <div className="movie_card_play">
             <div className="movie_card_play_icon">
@@ -29,7 +32,7 @@ function MovieCard({ item }) {
             className="movie_card_content_title"
             onClick={() => navigate(`/movie/${item?.id}`)}
           >
-            Kick Buttowski
+            {item?.name}
           </div>
           <div className="movie_card_content_type">
             <span

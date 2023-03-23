@@ -96,7 +96,7 @@ function MovieDetails() {
                   key={index + "chap"}
                   onClick={() => navigate(`/watch/${item?.chapID}`)}
                 >
-                  {item?.chapID}
+                  {index + 1}
                 </div>
               );
             })}
