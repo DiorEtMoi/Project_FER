@@ -11,6 +11,7 @@ import UploadChap from "../../admin/addMovie/UploadChap";
 import TypeList from "../typeList/TypeList";
 import PrivateLayout from "../../layout/privateLayout/PrivateLayout";
 import TypeMovie from "../../admin/typeMovie/TypeMovie";
+import ManageUser from "../../admin/addMovie/ManageUser"
 
 export const publicRoute = [
   {
@@ -45,6 +46,11 @@ export const publicRoute = [
   },
 ];
 export const privateRouter = [
+  {
+    path: "/admin/user_manager",
+    element: ManageUser,
+    layout: PrivateLayout,
+  },
   {
     path: "/admin/movie_manager",
     element: MovieManager,

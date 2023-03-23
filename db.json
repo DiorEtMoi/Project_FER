@@ -1,21 +1,24 @@
 {
   "user": [
     {
-      "id": 1,
+      "role": "role_admin",
       "userName": "dinhhoan",
       "password": "123",
-      "role": "role_admin"
+      "status": 0,
+      "id": 1
     },
     {
-      "id": 2,
+      "role": "role_user",
       "userName": "dinhhoan1",
       "password": "123",
-      "role": "role_user"
+      "status": 1,
+      "id": 2
     },
     {
+      "role": "role_user",
       "userName": "vuong",
       "password": "123",
-      "role": "role_user",
+      "status": 1,
       "id": 3
     }
   ],
@@ -30,7 +33,7 @@
         }
       ],
       "type": {
-        "typeID": 1
+        "id": 1
       },
       "image": "https://res.cloudinary.com/db7xtr0t6/image/upload/v1678011941/vtmy07vgygtsfta8e1k6.jpg",
       "background": "https://res.cloudinary.com/db7xtr0t6/image/upload/v1679416931/attack-on-titan-final-chapter-e1670261000922_iea4fa.jpg"
@@ -39,7 +42,7 @@
       "name": "Yakusoku no Neverland",
       "content": "Những đứa trẻ mồ côi được nuôi trong House, một cô nhi viện cô lập với thế giới bên ngoài. Chúng được sống một cuộc đời an nhàn cho đến một ngày nọ, những đứa trẻ được nhận nuôi bỗng mất tích và không hề liên lạc được nữa. Liệu chuyện gì ở đằng sau cô nhi viện ma quái này?",
       "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679545499/l33n9qeiwx8glo3mbscv.jpg",
-      "type": { "typeID": 1 },
+      "type": {},
       "chap": [
         {
           "chapID": 2
@@ -49,6 +52,15 @@
         },
         {
           "chapID": 4
+        },
+        {
+          "chapID": 9
+        },
+        {
+          "chapID": 10
+        },
+        {
+          "chapID": 11
         }
       ],
       "id": 2
@@ -57,7 +69,9 @@
       "name": "Vinland Saga Season 2",
       "content": "Phần tiếp theo của Vinland Saga, diễn ra sau khi Thorfinn bị nô dịch tại nông trang. (admin Tôi thấy phần nay Thorfinn nó trở thành nhân vật phụ luôn á mọi người =)) )",
       "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679548151/cr58lpmgi9qevkasfmp1.jpg",
-      "type": { "typeID": 1 },
+      "type": {
+        "id": 1
+      },
       "chap": [
         {
           "chapID": 5
@@ -69,7 +83,9 @@
       "name": "Vinland Saga",
       "content": "Một nghìn năm trước, thời đại xưng bá khắp nơi của các Viking đã thống trị Âu Châu và đến cả bờ đông của Châu Mỹ ngày nay. Thorfinn, con trai của chiến binh Viking vĩ đại nhất, đã phải xung trận từ bé và mài dũa để nối bước cha mình. Ước mơ của họ là đặt chân đến được miền đất hứa phía bên kia Đại Tây Dương, vùng đất Vinland.",
       "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679548436/onjcwvmxpqy6gkogicie.jpg",
-      "type": { "typeID": 1 },
+      "type": {
+        "id": 1
+      },
       "chap": [
         {
           "chapID": 6
@@ -81,7 +97,9 @@
       "name": "Rick and Morty S1",
       "content": "Rick, an alcoholic sociopath and scientist, lives with his daughter Beth's family. Apart from building gadgets, he takes his morally right but dimwit grandson Morty on absurd intergalactic adventures.",
       "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679548663/l7nbwswqhipboxdfwhia.jpg",
-      "type": { "typeID": 1 },
+      "type": {
+        "id": 1
+      },
       "chap": [
         {
           "chapID": 7
@@ -95,14 +113,40 @@
       "totalChap": "35",
       "chap": [],
       "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679549622/wcd5jjlbtqlng34ppqyp.jpg",
-      "type": { "typeID": 1 },
+      "type": {
+        "id": 1
+      },
       "id": 6
+    },
+    {
+      "name": "Rick and Morty S3",
+      "content": "Rick and Morty S3",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679572393/scmqet3yxhv381nr0kzo.jpg",
+      "type": {
+        "id": 2
+      },
+      "chap": [
+        {
+          "chapID": 8
+        },
+        {
+          "chapID": 12
+        },
+        {
+          "chapID": 13
+        }
+      ],
+      "id": 7
     }
   ],
   "type": [
     {
-      "typeID": 1,
+      "id": 1,
       "typeName": "Action"
+    },
+    {
+      "typeName": "Comedy",
+      "id": 2
     }
   ],
   "chapAnime": [
@@ -154,6 +198,48 @@
       "video": "https://short.ink/6TAmTnZxs",
       "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679548714/g0vkqxgxw08goer4wjun.jpg",
       "id": 7
+    },
+    {
+      "name": "Rick and Morty S3 Ep 1",
+      "animeID": 7,
+      "video": "https://short.ink/pwSVwr2LU",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679572611/migpetij2x7rgvk9pm3k.jpg",
+      "id": 8
+    },
+    {
+      "name": "Yakusoku no Neverland  Ep 04",
+      "animeID": 2,
+      "video": "https://short.ink/zpfB1eiFR",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679572910/uv0yoj0txfomxnbsdqjh.jpg",
+      "id": 9
+    },
+    {
+      "name": "Yakusoku no Neverland Ep 05",
+      "animeID": 2,
+      "video": "https://short.ink/WC8QpTjl4",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679572974/exvoxcg37dtbfjl5ktzc.jpg",
+      "id": 10
+    },
+    {
+      "name": "Yakusoku no Neverland Ep 06",
+      "animeID": 2,
+      "video": "https://short.ink/TUGqqWnrg",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679573110/wnmp77anr9pdee743yxa.jpg",
+      "id": 11
+    },
+    {
+      "name": "Rick and Morty S3 Ep 2",
+      "animeID": 7,
+      "video": "https://short.ink/Xb1udgCyj",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679575607/ryk45mevjbsknr715bml.jpg",
+      "id": 12
+    },
+    {
+      "name": "Rick and Morty S3 Ep 3",
+      "animeID": 7,
+      "video": "https://short.ink/wxgoHn2IY",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679575802/wjzatxvyzv89xda2e5kr.jpg",
+      "id": 13
     }
   ]
 }

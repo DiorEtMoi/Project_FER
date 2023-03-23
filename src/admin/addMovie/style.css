@@ -1,0 +1,15 @@
+h3{
+    color: #E2B842;
+}
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+}
+th {
+    border-bottom: 1px solid #364043;
+    color:  #e9bf4d;
+}
+td{
+    color: #e0e0e0;
+}

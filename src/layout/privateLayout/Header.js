@@ -22,7 +22,7 @@ function HeaderAdmin() {
           >
             Quản lý thể loại
           </div>
-          <div className="header_nav_item" onClick={() => navigate("/admin/")}>Quản lý</div>
+          <div className="header_nav_item" onClick={() => navigate("/admin/user_manager")}>Quản lý</div>
           <div
             className="header_nav_item"
             onClick={() => navigate("/admin/movie_manager")}
