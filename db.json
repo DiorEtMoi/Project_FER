@@ -36,28 +36,124 @@
       "background": "https://res.cloudinary.com/db7xtr0t6/image/upload/v1679416931/attack-on-titan-final-chapter-e1670261000922_iea4fa.jpg"
     },
     {
-      "name": "Dinh Hoan",
-      "content": "123123",
-      "totalChap": "1",
-      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679467158/urw2mgfmqjnmhbai16c7.jpg",
-      "type": {
-        "typeID": 1
-      },
+      "name": "Yakusoku no Neverland",
+      "content": "Những đứa trẻ mồ côi được nuôi trong House, một cô nhi viện cô lập với thế giới bên ngoài. Chúng được sống một cuộc đời an nhàn cho đến một ngày nọ, những đứa trẻ được nhận nuôi bỗng mất tích và không hề liên lạc được nữa. Liệu chuyện gì ở đằng sau cô nhi viện ma quái này?",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679545499/l33n9qeiwx8glo3mbscv.jpg",
+      "type": {},
+      "chap": [
+        {
+          "chapID": 2
+        },
+        {
+          "chapID": 3
+        },
+        {
+          "chapID": 4
+        }
+      ],
       "id": 2
+    },
+    {
+      "name": "Vinland Saga Season 2",
+      "content": "Phần tiếp theo của Vinland Saga, diễn ra sau khi Thorfinn bị nô dịch tại nông trang. (admin Tôi thấy phần nay Thorfinn nó trở thành nhân vật phụ luôn á mọi người =)) )",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679548151/cr58lpmgi9qevkasfmp1.jpg",
+      "type": {},
+      "chap": [
+        {
+          "chapID": 5
+        }
+      ],
+      "id": 3
+    },
+    {
+      "name": "Vinland Saga",
+      "content": "Một nghìn năm trước, thời đại xưng bá khắp nơi của các Viking đã thống trị Âu Châu và đến cả bờ đông của Châu Mỹ ngày nay. Thorfinn, con trai của chiến binh Viking vĩ đại nhất, đã phải xung trận từ bé và mài dũa để nối bước cha mình. Ước mơ của họ là đặt chân đến được miền đất hứa phía bên kia Đại Tây Dương, vùng đất Vinland.",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679548436/onjcwvmxpqy6gkogicie.jpg",
+      "type": {},
+      "chap": [
+        {
+          "chapID": 6
+        }
+      ],
+      "id": 4
+    },
+    {
+      "name": "Rick and Morty S1",
+      "content": "Rick, an alcoholic sociopath and scientist, lives with his daughter Beth's family. Apart from building gadgets, he takes his morally right but dimwit grandson Morty on absurd intergalactic adventures.",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679548663/l7nbwswqhipboxdfwhia.jpg",
+      "type": {},
+      "chap": [
+        {
+          "chapID": 7
+        }
+      ],
+      "id": 5
+    },
+    {
+      "name": "Death Note",
+      "content": "Một thần chết tên Ryuuku cố tình đánh rơi quyển sổ Death Note xuống thế giới loài người với mong muốn rằng hắn sẽ tìm được một thú vui nào đó từ việc này. Một học sinh trung học tên Yagami Light (hay Yagami Raito) là người nhặt được quyển sổ này và vì thế mà có khả năng giết bất cứ người nào chỉ bằng cách cách viết tên người đó vào quyển sổ và tưởng tượng ra khuôn mặt họ khi viết. Cậu quyết định dùng Death Note để tiêu diệt những kẻ tội phạm và những kẻ giết người tàn ác thông qua cuốn sổ. Khi tỉ lệ tôi phạm giảm xuống, mọi người nhanh chóng đặt cho cậu cái tên Kira. Đó cũng chính là lúc ICPO thuê L, thám tử tài giỏi bậc nhất thế giới, để tìm ra chân tướng thật sự của Kira...",
+      "totalChap": "35",
+      "chap": [],
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679549622/wcd5jjlbtqlng34ppqyp.jpg",
+      "type": {},
+      "id": 6
     }
   ],
   "type": [
     {
-      "id": 1,
+      "typeID": 1,
       "typeName": "Action"
     }
   ],
   "chapAnime": [
     {
+      "name": "Attack on Titan: Final Season - S4 EP 1",
       "id": 1,
       "animeID": 1,
       "video": "https://short.ink/N68LV7Yyl",
       "image": "https://res.cloudinary.com/db7xtr0t6/image/upload/v1678011941/vtmy07vgygtsfta8e1k6.jpg"
+    },
+    {
+      "name": "Yakusoku no Neverland EP 1",
+      "animeID": 2,
+      "video": "https://short.ink/9FHqiKS4u",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679546709/rrykiadb2zlxaal7vwdd.jpg",
+      "id": 2
+    },
+    {
+      "name": "Yakusoku no Neverland EP 2",
+      "animeID": 2,
+      "video": "https://short.ink/VsNxOHrCE",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679547539/brzwy5ij2xgjddadlhi6.jpg",
+      "id": 3
+    },
+    {
+      "name": "Yakusoku no Neverland EP 3",
+      "animeID": 2,
+      "video": "https://short.ink/qpmBEgq3s",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679547934/gigowyrtr5cqvlhlsziz.jpg",
+      "id": 4
+    },
+    {
+      "name": "Vinland Saga Season 2 EP 1",
+      "animeID": 3,
+      "video": "https://short.ink/jOFG7SsJD",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679548307/xso2ircvwkgh0e9xpeqy.jpg",
+      "id": 5
+    },
+    {
+      "name": "Vinland Saga Tập 1 - Một nơi nào đó, không phải ở đây",
+      "animeID": 4,
+      "video": "https://short.ink/CSSyuzceH",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679548551/e8bwa8eraeyyffrtrjcu.jpg",
+      "id": 6
+    },
+    {
+      "name": "Rick and Morty S1 EP 1",
+      "animeID": 5,
+      "video": "https://short.ink/6TAmTnZxs",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679548714/g0vkqxgxw08goer4wjun.jpg",
+      "id": 7
     }
   ]
 }

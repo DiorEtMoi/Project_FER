@@ -7,6 +7,7 @@ import MovieDetails from "../movieDetail/MovieDetails";
 import WatchMovie from "../watchMovie/WatchMovie";
 import MovieManager from "../../admin/addMovie/MovieManager";
 import AddMovie from "../../admin/addMovie/AddMovie";
+import UploadChap from "../../admin/addMovie/UploadChap";
 
 export const publicRoute = [
   {
@@ -44,6 +45,11 @@ export const privateRouter = [
   {
     path: "/admin/add_movie",
     element: AddMovie,
+    layout: Layout,
+  },
+  {
+    path: "/admin/upload/:slug",
+    element: UploadChap,
     layout: Layout,
   },
 ];

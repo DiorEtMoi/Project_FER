@@ -41,7 +41,7 @@ function WatchMovie() {
     return () => {
       here = false;
     };
-  }, []);
+  }, [slug]);
   useEffect(() => {
     if (anime) {
       let here = true;

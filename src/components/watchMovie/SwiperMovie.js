@@ -16,7 +16,7 @@ export default ({ movie }) => {
       {movie?.map((item, index) => {
         return (
           <SwiperSlide key={index + "swiperMovie"}>
-            <SwiperMovieCard item={item} />
+            <SwiperMovieCard item={item} index={index} />
           </SwiperSlide>
         );
       })}

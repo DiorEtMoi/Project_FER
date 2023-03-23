@@ -1,9 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-function SwiperMovieCard({ item }) {
+function SwiperMovieCard({ item, index }) {
+  const navigate = useNavigate();
   console.log(item);
   return (
-    <div className="swiper_movie_card">
+    <div
+      className="swiper_movie_card"
+      onClick={() => navigate(`/watch/${item?.id}`)}
+    >
       <div className="swiper_movie_card_img">
         <img src={item?.image} />
         <div className="swiper_movie_card_time">
@@ -11,7 +16,7 @@ function SwiperMovieCard({ item }) {
           <span>20:23</span>
         </div>
       </div>
-      <div className="swiper_movie_card_content">EP {item?.id}</div>
+      <div className="swiper_movie_card_content">{item?.name}</div>
     </div>
   );
 }

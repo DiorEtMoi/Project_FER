@@ -71,6 +71,13 @@ function Header() {
                 <div
                   className="search_content_wrap_item"
                   key={index + "searchCard"}
+                  style={{
+                    cursor: "pointer",
+                  }}
+                  onClick={() => {
+                    setSearch("");
+                    return navigate(`/movie/${item?.id}`);
+                  }}
                 >
                   <img src={item?.image} />
                   <p>{item?.name}</p>
