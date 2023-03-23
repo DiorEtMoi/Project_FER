@@ -28,7 +28,7 @@ function AddMovie() {
   const options = useMemo(() => {
     return option?.map((item) => {
       return {
-        value: item?.typeID,
+        value: item?.id,
         label: item?.typeName,
       };
     });
@@ -80,7 +80,6 @@ function AddMovie() {
     const formData = new FormData();
     formData.append("file", imageRef.current);
     formData.append("upload_preset", "dinhhoan");
-    dispatch(isLoading());
     try {
       const res = await axios.post(
         "https://api.cloudinary.com/v1_1/db7xtr0t6/image/upload",
@@ -88,32 +87,20 @@ function AddMovie() {
       );
       image = res?.data?.url;
     } catch (error) {
-      return dispatch(isFailing());
+      console.log(error);
     }
-    console.log({
-      name: nameRef.current.value,
-      content: contentRef.current.value,
-      totalChap: totalRef.current.value,
-      chap: [],
-      image,
-      type: { typeID: select?.value },
-    });
     try {
-      const res = await axios.post("http://localhost:3000/movie", {
+      dispatch(isLoading());
+      axios.post("http://localhost:3000/movie", {
         name: nameRef.current.value,
         content: contentRef.current.value,
         totalChap: totalRef.current.value,
-        chap: [],
         image,
         type: { typeID: select?.value },
       });
       dispatch(isSuccess());
-      console.log(res?.data);
       return naviagte("/admin/movie_manager");
-    } catch (error) {
-      dispatch(isFailing());
-      return toast.error(error?.response?.data);
-    }
+    } catch (error) {}
   };
   return (
     <div className="add_movie">
@@ -141,9 +128,7 @@ function AddMovie() {
           <Select
             options={options}
             className="select_type"
-            onChange={(choice) => {
-              console.log(choice);
-            }}
+            onChange={(choice) => setSelect(choice)}
           />
         </div>
         <div className="add_movie_body_input">

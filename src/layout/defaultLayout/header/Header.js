@@ -1,21 +1,50 @@
 import axios from "axios";
-import React, { useMemo, useContext, useState } from "react";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import { isLoading, isSuccess, isFailing } from "../../../redux/auth/slice";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { UserStore } from "../../../App";
 import "./style.scss";
 
 function Header() {
+  const { cache } = useContext(UserStore);
   const [option, setOption] = useState([]);
-  const [select, setSelect] = useState();
-  const options = useMemo(() => {
-    return option?.map((item) => {
-      return {
-        value: item?.id,
-        label: item?.typeName,
-      };
-    });
-  }, [option]);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    let here = true;
+    const url = "http://localhost:3000/type";
+    if (cache.current[url]) {
+      console.log(cache.current[url]);
+      return setOption(cache.current[url]);
+    }
+    dispatch(isLoading());
+    axios
+      .get(url)
+      .then((res) => {
+        if (!here) {
+          return;
+        }
+        setOption(res?.data);
+        console.log(res?.data);
+        cache.current[url] = res?.data;
+        dispatch(isSuccess());
+      })
+      .catch((err) => {
+        dispatch(isFailing());
+      });
+    return () => {
+      here = false;
+    };
+  }, []);
+
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const { role, setRole } = useContext(UserStore);
@@ -40,13 +69,16 @@ function Header() {
             Trang chủ
           </div>
           <div className="header_nav_item">Bạn đang tìm ?</div>
-          <div className="header_nav_item">
-          <select>
-            <option value="0">Chọn thể loại</option>
-            <option value="1">{option}</option>
-          </select>
-          </div>
           <div className="header_nav_item">Bộ sưu tập</div>
+          <div className="header_nav_item">
+            <select>
+              <option>Chọn thể loại</option>
+              {option.map(p =>
+                <option value={p.typeID}>{p.typeName}</option>
+              )}
+            </select>
+          </div>
+
         </div>
         <div className="header_option">
           <div className="header_option_search">
