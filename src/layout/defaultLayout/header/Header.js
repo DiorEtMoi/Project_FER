@@ -1,10 +1,21 @@
 import axios from "axios";
-import React, { useContext, useState } from "react";
+import React, { useMemo, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { UserStore } from "../../../App";
 import "./style.scss";
+
 function Header() {
+  const [option, setOption] = useState([]);
+  const [select, setSelect] = useState();
+  const options = useMemo(() => {
+    return option?.map((item) => {
+      return {
+        value: item?.id,
+        label: item?.typeName,
+      };
+    });
+  }, [option]);
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const { role, setRole } = useContext(UserStore);
@@ -29,7 +40,12 @@ function Header() {
             Trang chủ
           </div>
           <div className="header_nav_item">Bạn đang tìm ?</div>
-          <div className="header_nav_item">Không biết xem gì ?</div>
+          <div className="header_nav_item">
+          <select>
+            <option value="0">Chọn thể loại</option>
+            <option value="1">{option}</option>
+          </select>
+          </div>
           <div className="header_nav_item">Bộ sưu tập</div>
         </div>
         <div className="header_option">

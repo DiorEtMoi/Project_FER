@@ -17,6 +17,12 @@
       "password": "123",
       "role": "role_user",
       "id": 3
+    },
+    {
+      "userName": "quanghuy",
+      "password": "123",
+      "role": "role_user",
+      "id": 4
     }
   ],
   "movie": [
@@ -44,6 +50,16 @@
         "typeID": 1
       },
       "id": 2
+    },
+    {
+      "name": "Phim Hay",
+      "content": "Phim cực hay",
+      "totalChap": "-2",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679490187/cbd85waa9rtagbsjldeo.jpg",
+      "type": {
+        "typeID": 1
+      },
+      "id": 3
     }
   ],
   "type": [
