@@ -82,14 +82,16 @@ function MovieDetails() {
       <div className="container movie_detail_content">
         <div
           className="movie_detail_content_item"
-          onClick={() => navigate("/watch/1")}
+          onClick={() =>
+            navigate(`/watch/${anime?.chap[anime?.chap.length - 1]?.chapID}`)
+          }
         >
           <i className="fa-regular fa-circle-play"></i>
           <span>Xem tập mới nhất</span>
         </div>
         <div
           className="movie_detail_content_item"
-          onClick={() => navigate("/watch/1")}
+          onClick={() => navigate(`/watch/${anime?.chap[0]?.chapID}`)}
         >
           <i className="fa-solid fa-circle-play"></i>
           <span>Xem từ đầu</span>

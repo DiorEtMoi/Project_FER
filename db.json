@@ -23,6 +23,30 @@
       "accountID": 1,
       "name": "dinhhoan",
       "id": 3
+    },
+    {
+      "star": 10,
+      "content": "hay",
+      "animeID": 4,
+      "accountID": 1,
+      "name": "dinhhoan",
+      "id": 4
+    },
+    {
+      "star": 10,
+      "content": "hayy",
+      "animeID": 3,
+      "accountID": 3,
+      "name": "vuong",
+      "id": 5
+    },
+    {
+      "star": 10,
+      "content": "danh gia",
+      "animeID": 1,
+      "accountID": 3,
+      "name": "vuong",
+      "id": 6
     }
   ],
   "user": [
