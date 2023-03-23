@@ -142,7 +142,7 @@ function AddMovie() {
             options={options}
             className="select_type"
             onChange={(choice) => {
-              console.log(choice);
+              return setSelect(choice);
             }}
           />
         </div>

@@ -1,18 +1,25 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
 import { UserStore } from "../../App";
 import { isSuccess, isLoading, isFailing } from "../../redux/auth/slice";
 import MovieList from "../movieList/MovieList";
-import Swiper from "../swiper/Swiper";
-import "./style.scss";
-function Home() {
+
+function TypeList() {
   const [anime, setAnime] = useState([]);
   const { cache } = useContext(UserStore);
+  const { slug } = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [slug]);
+  useEffect(() => {
     let here = true;
-    const url = "http://localhost:3000/movie";
+    const url = `http://localhost:3000/movie?type.typeID=${slug}`;
     if (cache.current[url]) {
       return setAnime(cache.current[url]);
     }
@@ -36,15 +43,10 @@ function Home() {
     };
   }, []);
   return (
-    <div className="home">
-      <div className="home_silde">
-        <Swiper anime={anime} />
-      </div>
-      <div className="home_movie">
-        <MovieList anime={anime} />
-      </div>
+    <div>
+      <MovieList anime={anime} />
     </div>
   );
 }
 
-export default Home;
+export default TypeList;

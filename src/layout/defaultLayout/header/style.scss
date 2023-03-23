@@ -125,3 +125,29 @@
     opacity: 1;
   }
 }
+.type_option {
+  position: absolute;
+  top: 80%;
+  background-color: #151f30;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  animation: appearIn 0.2s ease-in-out;
+  &_wrap {
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    &_item {
+      padding-right: 20px;
+      margin-bottom: 20px;
+      width: calc(100% / 10 - 20px);
+      cursor: pointer;
+      & > h3 {
+        color: #fff;
+      }
+    }
+  }
+}
+.active {
+  color: #2f80ed;
+}

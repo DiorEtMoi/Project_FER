@@ -8,6 +8,9 @@ import WatchMovie from "../watchMovie/WatchMovie";
 import MovieManager from "../../admin/addMovie/MovieManager";
 import AddMovie from "../../admin/addMovie/AddMovie";
 import UploadChap from "../../admin/addMovie/UploadChap";
+import TypeList from "../typeList/TypeList";
+import PrivateLayout from "../../layout/privateLayout/PrivateLayout";
+import TypeMovie from "../../admin/typeMovie/TypeMovie";
 
 export const publicRoute = [
   {
@@ -35,21 +38,31 @@ export const publicRoute = [
     element: Register,
     layout: Layout,
   },
+  {
+    path: "/type/:slug",
+    element: TypeList,
+    layout: Layout,
+  },
 ];
 export const privateRouter = [
   {
     path: "/admin/movie_manager",
     element: MovieManager,
-    layout: Layout,
+    layout: PrivateLayout,
   },
   {
     path: "/admin/add_movie",
     element: AddMovie,
-    layout: Layout,
+    layout: PrivateLayout,
   },
   {
     path: "/admin/upload/:slug",
     element: UploadChap,
-    layout: Layout,
+    layout: PrivateLayout,
+  },
+  {
+    path: "/admin/type",
+    element: TypeMovie,
+    layout: PrivateLayout,
   },
 ];
