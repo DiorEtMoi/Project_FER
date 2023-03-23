@@ -1,9 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function SwiperMovieCard({ item, index }) {
   const navigate = useNavigate();
-  console.log(item);
+  const { slug } = useParams();
+
   return (
     <div
       className="swiper_movie_card"
@@ -16,7 +17,15 @@ function SwiperMovieCard({ item, index }) {
           <span>20:23</span>
         </div>
       </div>
-      <div className="swiper_movie_card_content">{item?.name}</div>
+      <div
+        className={
+          item?.id == slug
+            ? "swiper_movie_card_content active"
+            : "swiper_movie_card_content"
+        }
+      >
+        {item?.name}
+      </div>
     </div>
   );
 }

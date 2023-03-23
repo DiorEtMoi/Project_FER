@@ -137,7 +137,7 @@ function Header() {
                   key={index + "type"}
                   onClick={() => {
                     setOpen(false);
-                    return navigate(`/type/${item?.typeID}`);
+                    return navigate(`/type/${item?.id}`);
                   }}
                 >
                   <h3>{item?.typeName}</h3>

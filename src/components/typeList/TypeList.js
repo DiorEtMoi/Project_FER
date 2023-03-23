@@ -19,7 +19,7 @@ function TypeList() {
   }, [slug]);
   useEffect(() => {
     let here = true;
-    const url = `http://localhost:3000/movie?type.typeID=${slug}`;
+    const url = `http://localhost:3000/movie?type.id=${slug}`;
     if (cache.current[url]) {
       return setAnime(cache.current[url]);
     }
@@ -41,7 +41,7 @@ function TypeList() {
     return () => {
       here = false;
     };
-  }, []);
+  }, [slug]);
   return (
     <div>
       <MovieList anime={anime} />

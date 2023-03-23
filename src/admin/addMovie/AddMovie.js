@@ -28,7 +28,7 @@ function AddMovie() {
   const options = useMemo(() => {
     return option?.map((item) => {
       return {
-        value: item?.typeID,
+        value: item?.id,
         label: item?.typeName,
       };
     });
@@ -105,7 +105,7 @@ function AddMovie() {
         totalChap: totalRef.current.value,
         chap: [],
         image,
-        type: { typeID: select?.value },
+        type: { id: select?.value },
       });
       dispatch(isSuccess());
       console.log(res?.data);
