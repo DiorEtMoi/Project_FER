@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.scss";
 function MovieCard({ item }) {
-  console.log(item);
   const navigate = useNavigate();
   return (
     <div
