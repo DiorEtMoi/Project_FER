@@ -1,0 +1,37 @@
+.rating {
+  display: flex;
+  width: 50%;
+  align-items: start;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding-top: 40px;
+  border-top: 1px solid;
+  & > div {
+    display: flex;
+  }
+  &_header {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 1rem;
+  }
+  &_body {
+    & > i {
+      font-size: 1.5rem;
+      color: #2f80ed;
+    }
+  }
+}
+.rating_content {
+  margin-top: 20px;
+  width: 100%;
+  & > textarea {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 16px;
+    padding: 10px;
+    background-color: #151f30;
+    color: #fff;
+  }
+}

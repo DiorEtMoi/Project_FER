@@ -1,0 +1,126 @@
+.movie_manager_body {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -20px;
+  margin-top: 20px;
+}
+.card_movie {
+  width: calc(100% / 4 - 20px);
+  margin-right: 20px;
+  &_img {
+    height: 200px;
+    margin-bottom: 10px;
+    & > img {
+      border-radius: 16px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.add_movie_body_input {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  & > input {
+    flex: 1;
+    outline: none;
+    border: none;
+    border-radius: 16px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  & > label {
+    width: 20%;
+    color: #fff;
+    font-size: 20px;
+  }
+}
+.select_type {
+  flex: 1;
+}
+.add_movie_body_image {
+  display: flex;
+  margin-left: 20%;
+  &_bg {
+    width: 50%;
+    height: 300px;
+    margin-right: 40px;
+    &_wrap {
+      position: relative;
+      height: 100%;
+      background-color: #ccc;
+      border: 1px solid #c2efe6;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      & > i {
+        font-size: 40px;
+      }
+      & > img {
+        position: absolute;
+        border-radius: 16px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+.add_movie_body_image_img {
+  width: 30%;
+  height: 300px;
+  margin-right: 40px;
+  &_wrap {
+    height: 100%;
+    background-color: #ccc;
+    border: 1px solid #c2efe6;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & > i {
+      font-size: 40px;
+    }
+  }
+}
+.upload_body_input {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  & > input {
+    flex: 1;
+    outline: none;
+    border: none;
+    border-radius: 16px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  & > label {
+    width: 20%;
+    color: #fff;
+    font-size: 20px;
+  }
+}
+.upload_body_input_wrap {
+  width: 80%;
+  height: 300px;
+  background-color: #ccc;
+  border: 1px solid #c2efe6;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  & > i {
+    font-size: 40px;
+  }
+  & > img {
+    position: absolute;
+    border-radius: 16px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
