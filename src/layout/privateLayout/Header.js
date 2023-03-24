@@ -29,6 +29,12 @@ function HeaderAdmin() {
           >
             Quản lý Phim
           </div>
+          <div
+            className="header_nav_item"
+            onClick={() => navigate("/admin/manage")}
+          >
+            Thống kê
+          </div>
         </div>
         {role ? (
           <div
