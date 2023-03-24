@@ -25,7 +25,6 @@
       "id": 3
     },
     {
-
       "star": 10,
       "content": "hay",
       "animeID": 4,
@@ -48,7 +47,14 @@
       "accountID": 3,
       "name": "vuong",
       "id": 6
-
+    },
+    {
+      "star": 10,
+      "content": "hay quá ạ",
+      "animeID": 2,
+      "accountID": 3,
+      "name": "vuong",
+      "id": 7
     }
   ],
   "user": [
@@ -56,7 +62,7 @@
       "role": "role_admin",
       "userName": "dinhhoan",
       "password": "123",
-      "status": 0,
+      "status": 1,
       "id": 1
     },
     {
@@ -70,7 +76,7 @@
       "role": "role_user",
       "userName": "vuong",
       "password": "123",
-      "status": 1,
+      "status": 0,
       "id": 3
     }
   ],
@@ -189,6 +195,20 @@
         }
       ],
       "id": 7
+    },
+    {
+      "name": "phim hay hahaa",
+      "content": "phim hay hahaa",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679601169/jouubaw0vbjlkch3gol4.jpg",
+      "type": {
+        "id": 2
+      },
+      "chap": [
+        {
+          "chapID": 14
+        }
+      ],
+      "id": 8
     }
   ],
   "type": [
@@ -292,6 +312,13 @@
       "video": "https://short.ink/wxgoHn2IY",
       "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679575802/wjzatxvyzv89xda2e5kr.jpg",
       "id": 13
+    },
+    {
+      "name": "phim hay hihi",
+      "animeID": 8,
+      "video": "1",
+      "image": "http://res.cloudinary.com/db7xtr0t6/image/upload/v1679601196/ootddqa7s3lhmnmmlluk.jpg",
+      "id": 14
     }
   ]
 }

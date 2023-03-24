@@ -1,5 +1,6 @@
 h3{
     color: #E2B842;
+    padding: 20px;
 }
 table {
     width: 80%;
@@ -9,7 +10,16 @@ table {
 th {
     border-bottom: 1px solid #364043;
     color:  #e9bf4d;
+    width: 80px;
+    padding: 10px;
 }
 td{
     color: #e0e0e0;
+    padding: 10px;
+}
+tr{
+    border-block-end: solid 1px grey;
+}
+tr:hover{
+    background-color: #364043;
 }

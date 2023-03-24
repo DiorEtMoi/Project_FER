@@ -13,11 +13,17 @@ import PrivateLayout from "../../layout/privateLayout/PrivateLayout";
 import TypeMovie from "../../admin/typeMovie/TypeMovie";
 import ManageUser from "../../admin/addMovie/ManageUser"
 import AddNewType from "../../admin/typeMovie/AddNewType";
+import NewMovie from "../home/NewMovie";
 
 export const publicRoute = [
   {
     path: "/",
     element: Home,
+    layout: Layout,
+  },
+  {
+    path: "/newMovie",
+    element: NewMovie,
     layout: Layout,
   },
   {
