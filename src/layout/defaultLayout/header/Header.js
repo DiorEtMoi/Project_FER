@@ -60,6 +60,9 @@ function Header() {
           <div className="header_nav_item" onClick={() => navigate("/")}>
             Trang chủ
           </div>
+          <div className="header_nav_item" onClick={() => navigate("/newMovie")}>
+            Phim mới
+          </div>
           <div className="header_nav_item">Bạn đang tìm ?</div>
           <div
             className={open ? "header_nav_item active" : "header_nav_item"}
@@ -70,7 +73,6 @@ function Header() {
           >
             Thể loại ?
           </div>
-          <div className="header_nav_item">Bộ sưu tập</div>
         </div>
         <div className="header_option">
           <div className="header_option_search">
